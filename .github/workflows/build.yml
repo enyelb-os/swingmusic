@@ -172,9 +172,9 @@ jobs:
 
       - name: Build appimage
         run: |
-          python-appimage build app -p 3.11 appimage/ -n "swingmusic-$APPIMAGE_ARCH" -x client --no-packaging
-          pip install --target "swingmusic-$APPIMAGE_ARCH/opt/python3.11/lib/python3.11/" --no-deps --find-links=wheels/ swingmusic
-          ./appimagetool-$APPIMAGE_ARCH.AppImage --no-appstream "swingmusic-$APPIMAGE_ARCH" "swingmusic-v${{inputs.tag}}-$APPIMAGE_ARCH.AppImage"
+          python-appimage build app -p 3.11 appimage/ -n "enyelbmusic-$APPIMAGE_ARCH" -x client --no-packaging
+          pip install --target "enyelbmusic-$APPIMAGE_ARCH/opt/python3.11/lib/python3.11/" --no-deps --find-links=wheels/ enyelbmusic
+          ./appimagetool-$APPIMAGE_ARCH.AppImage --no-appstream "enyelbmusic-$APPIMAGE_ARCH" "enyelbmusic-v${{inputs.tag}}-$APPIMAGE_ARCH.AppImage"
 
       - uses: actions/upload-artifact@v4
         with:
@@ -297,9 +297,9 @@ jobs:
         run: |
           sudo apt-get install libev-dev -y > /dev/null
 
-      - name: Install swingmusic
+      - name: Install enyelbmusic
         run: |
-          pip install --find-links=wheels/ swingmusic[build]
+          pip install --find-links=wheels/ enyelbmusic[build]
 
       - name: Build with Pyinstaller on ${{ matrix.os }}
         run: pyinstaller swingmusic.spec
