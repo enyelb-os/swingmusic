@@ -19,6 +19,8 @@ from swingmusic.utils.paths import get_client_files_extensions
 from swingmusic.api.plugins import lyrics as lyrics_plugin
 from swingmusic.api.plugins import mixes as mixes_plugin
 
+from enyelb import api as extra
+
 log = logging.getLogger(__name__)
 # # # # # # # # # # # # # # # # # #
 # Grouped configuration function  #
@@ -63,6 +65,7 @@ def config_jwt(web):
 def load_endpoints(web: OpenAPI):
     # Register all the API blueprints
     with web.app_context():
+        web.register_api(extra.api)
         web.register_api(swing_api.album.api)
         web.register_api(swing_api.artist.api)
         web.register_api(swing_api.stream.api)

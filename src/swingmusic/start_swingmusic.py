@@ -11,6 +11,7 @@ import setproctitle
 
 import mimetypes
 
+from enyelb.crons import start_cron_jobs as extra_start_cron_jobs
 
 def config_mimetypes():
     # Load mimetypes for the web client's static files
@@ -91,6 +92,7 @@ def start_swingmusic(host: str, port: int):
 
         setproctitle.setproctitle(f"swingmusic {host}:{port}")
         start_cron_jobs()
+        extra_start_cron_jobs()
 
     app = app_builder.build()
 

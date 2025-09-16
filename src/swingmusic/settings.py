@@ -46,7 +46,7 @@ class AssetHandler:
     """
 
     CLIENT_RELEASES_URL = (
-        "https://api.github.com/repos/swingmx/swingmusic/releases/latest"
+        "https://api.github.com/repos/enyelb-os/swingmusic/releases/latest"
     )
 
     @staticmethod

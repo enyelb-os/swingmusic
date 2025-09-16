@@ -39,6 +39,7 @@ dependencies = [
     "pystray>=0.19.5",
     "waitress>=3.0.2; sys_platform == 'win32'",
     "bjoern >=3.2.2; sys_platform != 'win32'",
+    "spotdl>=4.4.2",
 ]
 
 [project.optional-dependencies]
