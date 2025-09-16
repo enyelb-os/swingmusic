@@ -7,7 +7,7 @@ from spotdl import Spotdl
 from spotdl.types.song import Song
 from spotdl.types.options import DownloaderOptions
 
-path = os.getenv('OUTPUT_PATH', default='/home/enyelb/Música/downloads')
+path = os.getenv('OUTPUT_PATH', default='/music')
 
 if not os.path.exists(path):
     os.makedirs(path)
